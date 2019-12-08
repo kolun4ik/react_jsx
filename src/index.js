@@ -1,25 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import faker from 'faker';
+import Question from './Question';
 
 
 const App = () => {
-
-    const buttonText = { text: 'Click Me'};
-    const labelText = 'Enter name:';
-
     return (
-        <div>
-            <label className="label" htmlFor="name">
-                {labelText}
-            </label>
-            <input id="name" type="text"/>
-    <button style={{backgroundColor: 'blue', color: 'white'}}>{buttonText.text}</button>
-        </div>
-        );
+        <Question 
+            header={faker.lorem.words()}
+            description={faker.lorem.paragraph()}
+        />
+    );
+       
+
 };
 
-ReactDOM.render(
-    <App />,
-    document.querySelector('#root')
-)
+ReactDOM.render(<App />,document.querySelector('#root'));
